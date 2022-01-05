@@ -1,0 +1,45 @@
+body{
+    background-color: $white;
+    font-size: $body-size;
+    font-family: $primary-font;
+    font-style: normal;
+    color:$black;
+}
+
+h1,h2,h3,h4,h5,h6{
+    font-family:$secondary-font;
+    font-weight:300;    
+    text-transform:uppercase;
+    @include no-margin;
+}
+
+h3{
+    font-size: 36px;
+}
+
+
+
+/* Basic styles for text */
+p{
+    color:$black;
+    line-height:1.5;
+    word-wrap:break-word;
+}
+
+a{
+    text-decoration: none;
+
+
+    &:hover,
+    &:focus{
+        text-decoration: none;
+    }
+}
+
+ul{
+    @include no-margin;
+}
+
+li{
+    list-style: none;
+}

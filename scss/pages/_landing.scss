@@ -1,0 +1,558 @@
+.header {
+    position: relative;
+
+    &-bg {
+        background-image: url(../../img/mobile/image-hero.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 800px;
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+    }
+
+    &-top {
+        &-navbar-default {
+            padding-top: 30px;
+            padding-bottom: 30px;
+            background-color: transparent;
+        }
+
+        &-navbar-default &-burger-btn {
+            @include no-border;
+            position: relative;
+            z-index: 1001;
+            font-size: 25px;
+            color: $white;
+        }
+
+        &-navbar-default &-burger-btn:hover,
+        &-navbar-default &-burger-btn:focus {
+            background-color: transparent;
+        }
+
+        &-navbar-default &-collapse {
+            @include no-border;
+            @include no-box-shadow;
+            position: fixed;
+            top: 0;
+            left: -800px;
+            background-color: $black;
+            width: 100%;
+            height: 100vh;
+            z-index: 1000;
+            transition: left 0.5s 0s ease;
+            padding-top: 200px;
+            padding-left: 30px;
+
+            &.active {
+                left: 0;
+            }
+        }
+
+        &-navbar-default &-navbar-brand {
+            color: $white;
+            font-size: 28px;
+            font-weight: 400;
+            position: relative;
+            z-index: 1001;
+
+            &:hover,
+            &:focus {
+                color: $white;
+            }
+        }
+
+
+        &-navbar-default &-navbar-nav>li>a {
+            color: $white;
+            text-transform: uppercase;
+            font-size: 50px;
+            margin-bottom: 60px;
+            font-family: $secondary-font;
+            display: inline-block;
+            position: relative;
+
+            &::before {
+                content: '';
+                position: absolute;
+                bottom: -3px;
+                right: 50%;
+                background-color: $white;
+                height: 2px;
+                width: 0%;
+                transition: width 0.5s 0s ease;
+            }
+
+            &:hover::before {
+                width: 50%;
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: -3px;
+                left: 50%;
+                background-color: $white;
+                height: 2px;
+                width: 0%;
+                transition: width 0.5s 0s ease;
+            }
+
+            &:hover::after {
+                width: 50%;
+            }
+
+        }
+
+        &-navbar-default &-navbar-nav>li>a:hover,
+        &-navbar-default &-navbar-nav>li>a:focus {
+            color: $white;
+        }
+
+    }
+
+
+    &-banner-main {
+        border: 1px solid $white;
+        margin: 220px auto 310px;
+        padding: 30px 22px;
+        width: 290px;
+    }
+
+    &-banner h3 {
+        color: $white;
+    }
+
+    @media screen and (min-width:768px) {
+        &-bg {
+            background-image: url(../../img/desktop/image-hero.jpg);
+            background-repeat: no-repeat;
+            background-position: top center;
+            background-size: cover;
+            height: 100%;
+            position: relative;
+        }
+
+        &-top {
+            &-navbar-default {
+                padding-top: 62px;
+            }
+
+            &-navbar-default &-burger-btn {
+                display: none;
+            }
+
+            &-navbar-default &-collapse {
+                position: relative;
+                top: 0;
+                left: 0;
+                background-color: transparent;
+                width: auto;
+                height: auto;
+                padding-top: 0;
+                padding-left: 0;
+            }
+
+            &-navbar-default &-navbar-nav>li>a {
+                text-transform: capitalize;
+                font-size: 16px;
+                margin-bottom: 0;
+                font-family: $primary-font;
+
+                &:hover::before {
+                    width: 40%;
+                }
+
+                &:hover::after {
+                    width: 30%;
+                }
+            }
+        }
+
+        &-banner-main {
+            border: 1px solid $white;
+            margin: 220px auto 310px;
+            padding: 30px 22px;
+            width: auto;
+        }
+
+
+        &-banner-main br {
+            display: none;
+        }
+
+        &-banner-main h3 {
+            font-size: 66px;
+        }
+
+    }
+}
+
+.interactive-vr {
+    padding-top: 93px;
+    padding-bottom: 100px;
+
+    & img {
+        margin: 0 auto;
+    }
+
+    & h3 {
+        text-align: center;
+        padding-bottom: 29px;
+    }
+
+    & p {
+        color: $very-dark-gray;
+        text-align: center;
+        line-height: 1.6;
+    }
+
+    &-firstCol {
+        padding-bottom: 45px;
+    }
+
+    &-secondCol {
+        background-color: $white;
+    }
+
+    @media screen and (min-width:768px) {
+        padding-bottom: 160px;
+
+        &-firstCol {
+            @include no-padding;
+            height: 500px;
+        }
+
+        & img {
+            height: 100%;
+            object-fit: cover;
+        }
+
+        &-secondCol {
+            background-color: $white;
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+
+        & h3 {
+            text-align: left;
+        }
+
+        & p {
+            text-align: left;
+        }
+    }
+
+    @media screen and (min-width:1200px) {
+        &-secondCol {
+            margin-top: 200px;
+            background-color: $white;
+            height: 300px;
+            padding-top: 96px;
+            padding-left: 65px;
+        }
+    }
+}
+
+.our-creations {
+    &-row {
+        position: relative;
+    }
+
+    &-secondCol {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        text-align: center;
+        margin-top: 5px;
+    }
+
+    &-thirdCol {
+        margin-bottom: 50px;
+    }
+
+    & a {
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        color: $black;
+        border: 1px solid $black;
+        padding: 13px 45px;
+        transition: background-color 0.5s 0s ease,
+            color 0.5s 0s ease;
+
+        &:hover,
+        &:focus {
+            background-color: $black;
+            color: $white;
+        }
+    }
+
+    & h3 {
+        text-align: center;
+        margin-bottom: 59px;
+    }
+
+    &-subcol {
+        margin-bottom: 28px;
+        position: relative;
+    }
+
+    &-subcol picture {
+        position: relative;
+        display: block;
+    }
+
+    &-subcol picture::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgb(0, 0, 0);
+        background: linear-gradient(90deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.1) 78%);
+    }
+
+    &-subcol picture::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.6);
+        opacity: 0;
+        transition: opacity 0.5s 0s ease;
+    }
+
+    &-subcol picture:hover::after {
+        opacity: 1;
+    }
+
+    &-subcol span {
+        position: absolute;
+        bottom: 19px;
+        left: 44px;
+        text-transform: uppercase;
+        color: $white;
+        font-size: 35px;
+        font-family: $secondary-font;
+        line-height: 1.0;
+    }
+
+    &-subcol:hover span {
+        color: black;
+    }
+
+    &-subcol img {
+        width: 100%;
+    }
+
+    @media screen and (min-width:768px) {
+        &-secondCol {
+            position: relative;
+            text-align: right;
+        }
+
+        & h3 {
+            text-align: left;
+        }
+
+        & a {
+            padding: 8px 45px;
+        }
+
+        &-container-fluid {
+            @include no-padding;
+        }
+
+        &-subcol picture::before {
+            content: '';
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 58%, rgba(0, 0, 0, 0.7) 90%);
+        }
+
+        &-subcol span {
+            left: 34px;
+        }
+    }
+}
+
+.footer {
+    margin-top: 120px;
+    padding-top: 70px;
+    padding-bottom: 70px;
+    background-color: $black;
+
+    &-navbar-default {
+        background-color: transparent;
+        @include no-border;
+    }
+
+    &-socialnetwork {
+        text-align: center;
+    }
+
+    &-navbar-header {
+        margin-bottom: 40px;
+    }
+
+    &-navbar-default &-navbar-brand {
+        color: $white;
+        font-size: 35px;
+        font-weight: 400;
+        width: 100%;
+        text-align: center;
+
+        &:hover {
+            color: $white;
+        }
+    }
+
+    &-navbar-default &-navbar-nav>li {
+        text-align: center;
+    }
+
+    &-navbar-default &-navbar-nav>li>a {
+        color: $white;
+        text-transform: capitalize;
+        font-size: 16px;
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            right: 50%;
+            background-color: $white;
+            height: 2px;
+            width: 0%;
+            transition: width 0.5s 0s ease;
+        }
+
+        &:hover::before {
+            width: 50%;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 50%;
+            background-color: $white;
+            height: 2px;
+            width: 0%;
+            transition: width 0.5s 0s ease;
+        }
+
+        &:hover::after {
+            width: 40%;
+        }
+
+        &:hover,
+        &:focus {
+            color: $white;
+        }
+    }
+
+    &-socialnetwork a {
+        font-size: 30px;
+        margin-right: 20px;
+        color: $white;
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            right: 50%;
+            background-color: $white;
+            height: 2px;
+            width: 0%;
+            transition: width 0.5s 0s ease;
+        }
+
+        &:hover::before {
+            width: 50%;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 50%;
+            background-color: $white;
+            height: 2px;
+            width: 0%;
+            transition: width 0.5s 0s ease;
+        }
+
+        &:hover::after {
+            width: 40%;
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    &-credits {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    &-credits p {
+        color: $very-dark-gray;
+    }
+
+    @media screen and (min-width:768px) {
+        &-credits {
+            text-align: left;
+        }
+
+        &-container-fluid {
+            display: flex;
+            flex-direction: column;
+        }
+
+        &-navbar-default &-navbar-nav>li {
+            margin-right: 15px;
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+
+        &-navbar-default &-navbar-nav>li>a {
+            padding: 10px 15px 10px 0;
+
+        }
+
+        &-navbar-default &-navbar-brand {
+            text-align: left;
+        }
+
+        &-navbar-header {
+            margin-bottom: 20px;
+        }
+
+        &-socialnetwork {
+            text-align: right;
+            margin-bottom: 30px;
+        }
+
+        &-credits p {
+            text-align: right;
+        }
+    }
+}
